@@ -1,17 +1,24 @@
-body {
+/* Глобальный ресет для ВСЕХ элементов, чтобы браузер не добавлял всякую херню */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    width: 100%;
 }
 
 @font-face {
     font-family: "Open Sans";
     src:
         url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff") format("woff");
-    url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff") format("woff");
+    /* Тут рисует ошибку. Посмотри как подключаются несколько шрифтов */
+    /* url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff") format("woff"); */
 }
 
 .header {
+    width: 100%;
     text-align: center;
     background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
     background-repeat: no-repeat;
@@ -20,9 +27,10 @@ body {
     background-color: #000000;
     position: relative;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 0;
-
-
 }
 
 .header::after {
@@ -39,21 +47,19 @@ body {
 }
 
 .container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: nowrap;
-
+    padding: 0 5%;
 }
 
 .header-logo {
     width: 181px;
-    padding-left: 247px;
 }
 
 .menu {
-
-    padding-left: 400px;
     color: #ffffff;
     margin-top: 45px;
 }
@@ -71,16 +77,14 @@ body {
 }
 
 .title-one {
-    width: 680px;
-    align-items: center;
+    margin: 100px 0;
+    width: 48%;
     font-size: 45px;
     line-height: 75px;
     text-transform: uppercase;
     color: #ffffff;
     font-weight: 700;
     font-family: "Open Sans";
-    display: flex;
-
 }
 
 .post {
@@ -94,7 +98,6 @@ body {
 .post-link {
     list-style-type: none;
     display: flex;
-
 }
 
 .post-link-tag {
