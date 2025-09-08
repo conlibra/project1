@@ -196,8 +196,8 @@ body {
     text-transform: uppercase;
     color: #0f0d0e;
     font-weight: 700;
-    font-family: "OpenSans"
-        text-align: center;
+    font-family: "OpenSans";
+    text-align: center;
 }
 
 .line-header {
@@ -232,6 +232,24 @@ body {
 
 }
 
+.hidden,
+.visually-hidden {
+    /* Уменьшает элемент до крошечного блока (1px x 1px).
+    Перемещает его за пределы экрана (с помощью clip + margin).
+    Не даёт ему влиять на разметку.
+    Сохраняет его в DOM и дереве доступности, так что экранные дикторы всё равно могут его прочитать. 
+    */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .search {
     margin-top: 50px;
     display: flex;
@@ -245,17 +263,18 @@ body {
     min-height: 49px;
     padding-left: 5%;
     padding-right: 3%;
-
-
+    border: 0;
 }
 
 .search-button {
     width: 50px;
+    height: 50px;
     background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/search.svg");
     background-repeat: no-repeat;
     background-size: 18px;
     background-position: center;
     background-color: #b59f5b;
+    border: 0;
 }
 
 .tag-link {
@@ -273,19 +292,45 @@ body {
 
 }
 
-.theme-link {
+.theme-links-list {
     width: 100%;
-    margin-right: 5px;
-    list-style-type: none;
-    text-decoration: none;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #0f0d0e;
     font-weight: 700;
     font-family: "OpenSans";
-
+    list-style-type: none;
+    text-decoration: none;
 }
 
-.footer-icon icon-dribble {
+.theme-links-list li {
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.theme-link {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    color: #0f0d0e;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.link-number {
+    font-size: 10px;
+    margin-left: 3px;
+    color: #b59f5b;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.footer-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
     background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg);
 }
